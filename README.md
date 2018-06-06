@@ -24,6 +24,8 @@ http://SERVERIP/upload.html - used to upload files(<b>html</b>) to the esp board
 
 http://SERVERIP/update.html - used to update the firmware on the esp board (<b>fwupdate.bin</b>).
 
+http://SERVERIP/fileman.html - used to <b>view</b> / <b>download</b> / <b>delete</b> files on the internal storage of the esp board.
+
 
 there is a storage limitation of <b>2.8mb</b> using the D1 Mini board
 
