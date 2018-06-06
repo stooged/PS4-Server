@@ -14,17 +14,21 @@ i would not call this a modchip but its the closest thing we have right now to h
 
 implemented internal pages:
 
-http://SERVERIP/index.html - if no index.html is found the server will generate a simple index page and list the payloads automatically.
+admin.html - the main landing page for administration.
 
-http://SERVERIP/info.html - provides information about the esp board.
+index.html - if no index.html is found the server will generate a simple index page and list the payloads automatically.
 
-http://SERVERIP/format.html - used to format the internal storage(<b>SPIFFS</b>) of the esp board.
+info.html - provides information about the esp board.
 
-http://SERVERIP/upload.html - used to upload files(<b>html</b>) to the esp board for the webserver.
+format.html - used to format the internal storage(<b>SPIFFS</b>) of the esp board.
 
-http://SERVERIP/update.html - used to update the firmware on the esp board (<b>fwupdate.bin</b>).
+upload.html - used to upload files(<b>html</b>) to the esp board for the webserver.
 
-http://SERVERIP/fileman.html - used to <b>view</b> / <b>download</b> / <b>delete</b> files on the internal storage of the esp board.
+update.html - used to update the firmware on the esp board (<b>fwupdate.bin</b>).
+
+fileman.html - used to <b>view</b> / <b>download</b> / <b>delete</b> files on the internal storage of the esp board.
+
+config.html - used to configure wifi ap and ip settings.
 
 
 there is a storage limitation of <b>2.8mb</b> using the D1 Mini board
