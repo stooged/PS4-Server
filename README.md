@@ -11,8 +11,11 @@ this is designed to use the 5.05 exploit and payloads in a single html file form
 i would not call this a modchip but its the closest thing we have right now to having a totally self contained method for the ps4 to launch mirafw and the payloads.
 
 
+<br>
+<br>
 
-implemented internal pages:
+
+<b>implemented internal pages</b>
 
 admin.html - the main landing page for administration.
 
@@ -34,3 +37,50 @@ config.html - used to configure wifi ap and ip settings.
 there is a storage limitation of <b>2.8mb</b> using the D1 Mini board
 
 the <b>User's Guide</b> in the ps4 settings menu will be redirected to the main index.html
+
+
+<br><br>
+
+
+installation is simple you just use the arduino ide to flash the sketch/firmware to the esp8266 board.<br>
+next you connect to the wifi access point with a pc/laptop, <b>PS4_WEB_AP</b> is the default SSID and <b>password</b> is the default password.<br>
+then use a webbrowser and goto http://10.1.1.1/admin.html <b>10.1.1.1</b> is the defult webserver ip.<br>
+on the side menu of the admin page select <b>File Uploader</b> and then click <b>Select Files</b> and locate the <b>esp_html</b> folder from this repo and select all the files inside the <b>esp_html</b> folder and click <b>Upload Files</b>
+you can then goto <b>Config Editor</b> and change the password for the wifi ap.
+
+once that is all setup you can then install the <a href=https://wiki.wemos.cc/products:d1:d1_mini>esp8266 D1 Mini</a> inside the ps4 console, there are lots of youtube videos to show you how to open the ps4 console and there are some pictures of the points on the ps4 mainboards i use to install the <a href=https://wiki.wemos.cc/products:d1:d1_mini>esp8266 D1 Mini</a> inside the images folder of this repo.
+
+
+<br><br>
+
+updating the html is simple you just power on the ps4 and connect to the wifi ap with a pc/laptop like you did for the initial install and goto upload files again and upload new html.<br>
+you can also go into <b>File Manager</b> and delete or download files.
+
+to update the firmware you goto <b>Firmware Update</b> and upload the new firmware file (<b>fwupdate.bin</b>)
+
+
+
+<br><br>
+
+
+the phat, slim and pro consoles all have a location to fit the <a href=https://wiki.wemos.cc/products:d1:d1_mini>esp8266 D1 Mini</a>
+
+<b>PHAT</b>
+<img src=https://github.com/stooged/PS4-Server/blob/master/Images/PHAT_CUH-1102/2.jpg>
+
+<b>SLIM</b>
+<img src=https://github.com/stooged/PS4-Server/blob/master/Images/SLIM_CUH-2002/3.jpg>
+
+<b>PRO</b>
+<img src=https://github.com/stooged/PS4-Server/blob/master/Images/PRO_CUH-7102/4.jpg>
+
+
+
+
+
+
+
+
+
+
+
