@@ -43,6 +43,12 @@ the <b>User's Guide</b> in the ps4 settings menu will be redirected to the main 
 
 
 installation is simple you just use the arduino ide to flash the sketch/firmware to the esp8266 board.<br>
+<br>
+make sure you set the flash size to <b>4M (3M SPIFFS)</b><br>
+<img src=https://github.com/stooged/PS4-Server/blob/master/Images/4m3m_spiffs.jpg>
+
+
+
 next you connect to the wifi access point with a pc/laptop, <b>PS4_WEB_AP</b> is the default SSID and <b>password</b> is the default password.<br>
 then use a webbrowser and goto http://10.1.1.1/admin.html <b>10.1.1.1</b> is the defult webserver ip.<br>
 on the side menu of the admin page select <b>File Uploader</b> and then click <b>Select Files</b> and locate the <b>esp_html</b> folder from this repo and select all the files inside the <b>esp_html</b> folder and click <b>Upload Files</b>
