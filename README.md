@@ -15,7 +15,7 @@ i would not call this a modchip but its the closest thing we have right now to h
 <br>
 
 
-<b>implemented internal pages<b>
+<b>implemented internal pages</b>
 
 admin.html - the main landing page for administration.
 
