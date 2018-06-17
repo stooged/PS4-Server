@@ -9,7 +9,7 @@ DNSServer dnsServer;
 ESP8266WebServer webServer;
 File upFile;
 
-String firmwareVer = "1.01";
+String firmwareVer = "1.02";
 
 //-------------------DEFAULT SETTINGS------------------//
 String AP_SSID = "PS4_WEB_AP";
@@ -128,7 +128,9 @@ bool loadFromSdCard(String path) {
   }
   if (instr(path,"/update/ps4/"))
   {
-    path.replace("/update/ps4/list/" + split(path,"/update/ps4/list/","/") + "/", "/");
+    String Region = split(path,"/update/ps4/list/","/");
+    handleConsoleUpdate(Region);
+    return true;
   }
   String dataType = getContentType(path);
   File dataFile = SPIFFS.open(path, "r");
@@ -460,6 +462,19 @@ void handleAdminHtml()
   String htmStr = "<!DOCTYPE html><html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Admin Panel</title><style>body {    background-color: #1451AE; color: #ffffff; font-size: 14px;  font-weight: bold;    margin: 0 0 0 0.0;    padding: 0.4em 0.4em 0.4em 0.6em;}.sidenav {    width: 140px;    position: fixed;    z-index: 1;    top: 20px;    left: 10px;    background: #6495ED;    overflow-x: hidden;    padding: 8px 0;}.sidenav a {    padding: 6px 8px 6px 16px;    text-decoration: none;    font-size: 14px;    color: #ffffff;    display: block;}.sidenav a:hover {    color: #1451AE;}.main {    margin-left: 150px;     padding: 10px 10px; position: absolute;   top: 0;   right: 0; bottom: 0;  left: 0;}</style></head><body><div class=\"sidenav\"><a href=\"/index.html\" target=\"mframe\">Main Page</a><a href=\"/info.html\" target=\"mframe\">ESP Information</a><a href=\"/fileman.html\" target=\"mframe\">File Manager</a><a href=\"/upload.html\" target=\"mframe\">File Uploader</a><a href=\"/update.html\" target=\"mframe\">Firmware Update</a><a href=\"/config.html\" target=\"mframe\">Config Editor</a><a href=\"/format.html\" target=\"mframe\">Storage Format</a></div><div class=\"main\"><iframe src=\"info.html\" name=\"mframe\" height=\"100%\" width=\"100%\" frameborder=\"0\"></iframe></div>    </table></body></html> ";
   webServer.setContentLength(htmStr.length());
   webServer.send(200, "text/html", htmStr);
+}
+
+
+void handleConsoleUpdate(String rgn)
+{
+  String Version = "05.050.000";
+  String sVersion = "05.050.000";
+  String lblVersion = "5.05";
+  String imgSize = "0";
+  String imgPath = "";
+  String xmlStr = "<?xml version=\"1.0\" ?><update_data_list><region id=\"" + rgn + "\"><force_update><system level0_system_ex_version=\"0\" level0_system_version=\"" + Version + "\" level1_system_ex_version=\"0\" level1_system_version=\"" + Version + "\"/></force_update><system_pup ex_version=\"0\" label=\"" + lblVersion + "\" sdk_version=\"" + sVersion + "\" version=\"" + Version + "\"><update_data update_type=\"full\"><image size=\"" + imgSize + "\">" + imgPath + "</image></update_data></system_pup><recovery_pup type=\"default\"><system_pup ex_version=\"0\" label=\"" + lblVersion + "\" sdk_version=\"" + sVersion + "\" version=\"" + Version + "\"/><image size=\"" + imgSize + "\">" + imgPath + "</image></recovery_pup></region></update_data_list>";
+  webServer.setContentLength(xmlStr.length());
+  webServer.send(200, "text/xml", xmlStr);
 }
 
 
