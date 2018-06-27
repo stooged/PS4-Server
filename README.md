@@ -47,7 +47,7 @@ the <b>User's Guide</b> in the ps4 settings menu will be redirected to the main 
 
 installation is simple you just use the arduino ide to flash the sketch/firmware to the esp8266 board.<br>
 <br>
-make sure you set the flash size to match the D! board you are using.<b>
+make sure you set the flash size to match the D1 board you are using.<br>
 <b>4M (3M SPIFFS)</b> for the D1 Mini<br>
 <img src=https://github.com/stooged/PS4-Server/blob/master/Images/4m3m_spiffs.jpg><br><br>
 
