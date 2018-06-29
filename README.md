@@ -20,22 +20,23 @@ i would not call this a modchip but its the closest thing we have right now to h
 
 <b>implemented internal pages</b>
 
-admin.html - the main landing page for administration.
+* <b>admin.html</b> - the main landing page for administration.
 
-index.html - if no index.html is found the server will generate a simple index page and list the payloads automatically.
+* <b>index.html</b> - if no index.html is found the server will generate a simple index page and list the payloads automatically.
 
-info.html - provides information about the esp board.
+* <b>info.html</b> - provides information about the esp board.
 
-format.html - used to format the internal storage(<b>SPIFFS</b>) of the esp board.
+* <b>format.html</b> - used to format the internal storage(<b>SPIFFS</b>) of the esp board.
 
-upload.html - used to upload files(<b>html</b>) to the esp board for the webserver.
+* <b>upload.html</b> - used to upload files(<b>html</b>) to the esp board for the webserver.
 
-update.html - used to update the firmware on the esp board (<b>fwupdate.bin</b>).
+* <b>update.html</b> - used to update the firmware on the esp board (<b>fwupdate.bin</b>).
 
-fileman.html - used to <b>view</b> / <b>download</b> / <b>delete</b> files on the internal storage of the esp board.
+* <b>fileman.html</b> - used to <b>view</b> / <b>download</b> / <b>delete</b> files on the internal storage of the esp board.
 
-config.html - used to configure wifi ap and ip settings.
+* <b>config.html</b> - used to configure wifi ap and ip settings.
 
+* <b>reboot.html</b> - used to reboot the esp board
 
 there is a storage limitation of <b>2.8mb</b> using the <b>D1 Mini</b> board and <b>14.2mb</b> for the <b>D1 Mini PRO</b> board.
 
